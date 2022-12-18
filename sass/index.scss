@@ -1,0 +1,81 @@
+
+$primary: #00897b;
+$dark: #1a1a1b;
+$secondary: #a3a3a3;
+$success: #0e6b0e;
+$info: #363636;
+
+@import'../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bs-body-font-family: Rubik;
+    scroll-padding-top: 50px;
+    scroll-behavior: smooth;
+}
+
+.nav-link {
+    transition: ease-in-out;
+    &:hover {
+        color: white;
+        border-bottom: 5px solid white;
+    }
+}
+
+.tech-img {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.letter-spacing-1 {
+    letter-spacing: 2.2px;
+}
+
+.typewriter {
+    display: inline-block;
+
+    border-right: solid 3px #00897b;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation:
+    type 2s steps(19) 1s forwards,
+    blink 0.5s steps(1) infinite;
+}
+
+.nav-link::before {
+    content: '//  ';
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-1%);
+    transition: all 1s;
+}
+
+.show {
+    opacity:1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+@keyframes type {
+    to { width: 19ch}
+}
+
+@keyframes blink {
+    from { border-color: transparent;}
+    50% { border-color: #00897b}
+    to { border-color: transparent;}
+}
+
+
